@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      const reyes = [
+        {
+          nombre: "Atanagildo",
+          reinado: 15,
+          vacasComidas: 9
+        },
+        {
+          nombre: "Ervigio",
+          reinado: 7,
+          vacasComidas: 3
+        },
+        {
+          nombre: "Ataúlfo",
+          reinado: 5,
+          vacasComidas: 16
+        },
+        {
+          nombre: "Leogivildo",
+          reinado: 18,
+          vacasComidas: 3
+        },
+        {
+          nombre: "Recesvinto",
+          reinado: 9,
+          vacasComidas: 13
+        },
+        {
+          nombre: "Sisebuto",
+          reinado: 19,
+          vacasComidas: 11
+        }
+      ];
+      window.onload = inicio;
+
+      function inicio() {
+        const resultado1 = reyes.filter(valor=>
+          valor.vacasComidas>=10
+          );
+          const resultado2 = reyes.map((valor) => {
+          let texto = `<div>${valor.nombre} come ${valor.vacasComidas} vacas al dia </div>`;
+          escritura(texto);
+          return texto;
+
+        }
+        );
+        console.log(resultado1)
+        console.log(resultado2);
+      }
+
+      
+
+      
+
+      function escritura(dato) {
+        document.querySelector(".caja").insertAdjacentHTML("beforeend", dato);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="caja"></div>
+  </body>
+</html>
