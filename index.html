@@ -41,23 +41,14 @@
       window.onload = inicio;
 
       function inicio() {
-        const resultado1 = reyes.filter(valor=>
-          valor.vacasComidas>=10
+        const resultado1 = reyes
+          .filter(valor => valor.vacasComidas >= 10)
+          .map(valor => 
+            escritura(
+              `<div>${valor.nombre} come ${valor.vacasComidas} vacas al dia </div>`)
           );
-          const resultado2 = reyes.map((valor) => {
-          let texto = `<div>${valor.nombre} come ${valor.vacasComidas} vacas al dia </div>`;
-          escritura(texto);
-          return texto;
-
-        }
-        );
-        console.log(resultado1)
-        console.log(resultado2);
+        console.log(resultado1);
       }
-
-      
-
-      
 
       function escritura(dato) {
         document.querySelector(".caja").insertAdjacentHTML("beforeend", dato);
